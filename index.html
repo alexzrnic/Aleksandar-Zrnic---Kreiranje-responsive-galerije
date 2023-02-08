@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animacija</title>
+    <style>
+
+    body {
+        background-color: #050210;
+        margin: 70px auto;
+        width: 50%;
+    }
+
+    .outer-circle {
+        width: 600px;
+        height: 600px;
+        margin: auto;
+        position: absolute;
+        border-radius: 100%;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        animation: outer-circle-animation 1s running infinite;
+    }
+
+    .inner-circle {
+        width: 500px;
+        height: 500px;
+        background-color: #050210;
+        margin: 50px;
+        position: absolute;
+        border-radius: 100%;
+    }
+
+    .pulsating-circle {
+        width: 500px;
+        height: 500px;
+        margin: 50px;
+        position: absolute;
+        border-radius: 100%;
+        animation: pulsating-animation 1s running infinite;
+    }
+
+    .outer-circle::after {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        margin: 0;
+        border-radius: 100%;
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        filter: blur(100px);
+        transform: translateX(50px) scale (1);
+    }
+
+    
+    @keyframes outer-circle-animation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+    }
+
+    @keyframes pulsating-animation {
+
+        from {
+            background-color: #231848;
+            transform: scale(0);
+        }
+
+        to {
+            background-color: #050210;
+            transform: scale(1);
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="outer-circle"></div>
+    <div class="inner-circle"></div>
+    <div class="pulsating-circle"></div>
+</body>
+</html>
