@@ -1,84 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Animacija</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreiranje responsive galerije</title>
     <style>
-
-    body {
-        background-color: #050210;
-        margin: 70px auto;
-        width: 50%;
-    }
-
-    .outer-circle {
-        width: 600px;
-        height: 600px;
-        margin: auto;
-        position: absolute;
-        border-radius: 100%;
-        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
-        animation: outer-circle-animation 1s running infinite;
-    }
-
-    .inner-circle {
-        width: 500px;
-        height: 500px;
-        background-color: #050210;
-        margin: 50px;
-        position: absolute;
-        border-radius: 100%;
-    }
-
-    .pulsating-circle {
-        width: 500px;
-        height: 500px;
-        margin: 50px;
-        position: absolute;
-        border-radius: 100%;
-        animation: pulsating-animation 1s running infinite;
-    }
-
-    .outer-circle::after {
-        content: '';
-        position: absolute;
-        width: 600px;
-        height: 600px;
-        margin: 0;
-        border-radius: 100%;
-        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
-        filter: blur(100px);
-        transform: translateX(50px) scale (1);
-    }
-
-    
-    @keyframes outer-circle-animation {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-    }
-
-    @keyframes pulsating-animation {
-
-        from {
-            background-color: #231848;
-            transform: scale(0);
+        * {
+            background-color: lightgrey;
+            font-family: sans-serif;
         }
 
-        to {
-            background-color: #050210;
-            transform: scale(1);
+        header {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 20px;
         }
-    }
+
+        img {
+            width: 300px;
+            height: 250px;
+            margin: 10px;
+            background-repeat: no-repeat;
+            background-color: rgb(47, 59, 192);
+            border-radius: 10px;
+        }
+
+        p {
+            width: 1600px;
+        }
+
+        .elementi {
+            padding: 8px;
+        }
+
+        #galerija {
+            max-width: 1920px;
+            min-width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            color: black;
+        }
+
+        #galerija::after {
+            content: "";
+            display: block;
+            clear: left;
+        }
+
+        @media screen and (max-width: 1920px) { /*rezolucija za računare*/
+            #galerija {
+                width: 1920px;
+            }
+
+            p {
+                width: 1600px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) { /**/
+            #galerija {
+                width: 1024px;
+            }
+            p {
+                width: 800px;
+            }
+        }
+
+        @media screen and (max-width: 414px) {
+            #galerija {
+                width: 414px;
+            }
+            p {
+                width: 300px;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <div class="outer-circle"></div>
-    <div class="inner-circle"></div>
-    <div class="pulsating-circle"></div>
+    <header>
+        Gallery Heading
+    </header>
+    <div id="galerija">
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+        <div class="elementi"><img src="/placeholder-image.png" alt="galerija"></div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Purus non enim praesent elementum facilisis leo. Eget mi proin sed libero enim sed faucibus
+            turpis. Viverra nam libero justo laoreet sit. Purus in mollis nunc sed id semper risus. Integer malesuada nunc
+            vel risus commodo viverra maecenas accumsan lacus. Non consectetur a erat nam. Sagittis vitae et leo duis ut
+            diam quam. Posuere morbi leo urna molestie at elementum. Dui ut ornare lectus sit amet. Scelerisque in dictum
+            non consectetur a erat nam at lectus. Sit amet porttitor eget dolor morbi non arcu risus. Tellus rutrum tellus
+            pellentesque eu tincidunt tortor aliquam nulla. Dolor purus non enim praesent elementum. Sed arcu non odio
+            euismod lacinia at quis risus.</p>
+
+    </div>
+    
+    </div>
 </body>
+
 </html>
